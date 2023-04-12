@@ -1,0 +1,30 @@
+{
+  "keepWaitingPipelines": false,
+  "lastModifiedBy": "mahesh.kota@opsmx.io",
+  "limitConcurrent": true,
+  "schema": "1",
+  "spelEvaluator": "v4",
+  "stages": [
+    {
+      "isNew": true,
+      "name": "Wait",
+      "refId": "1",
+      "requisiteStageRefIds": [],
+      "type": "wait",
+      "waitTime": 11
+    },
+    {
+      "failPipeline": true,
+      "isNew": true,
+      "judgmentInputs": [],
+      "name": "Manual Judgment",
+      "notifications": [],
+      "refId": "2",
+      "requisiteStageRefIds": [
+        "1"
+      ],
+      "type": "manualJudgment"
+    }
+  ],
+  "triggers": []
+}
