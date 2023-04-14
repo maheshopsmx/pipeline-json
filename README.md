@@ -3,7 +3,7 @@
 
 ## Architecture (Draft)
 
-![Architecture](multi-stage-pipeline.jpg)
+![Architecture](Architecture.jpg)
 
 ## Steps to be followed 
 
