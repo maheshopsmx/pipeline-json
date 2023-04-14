@@ -3,11 +3,13 @@ git clone https://github.com/maheshopsmx/pipeline-json.git > /dev/null
 cd pipeline-json
 rm -rf ../list
 touch ../list
-stages=aws,waitstage,manualjudgement
+stages=waitstage,manualjudgement,aws
 IFS=","
 for liststages in $stages
 do
   existone=waitstage,manualjudgement,deploymanifest
+  loopcount=$(echo $existone | tr ',' ' ' | wc -w)
+  initcount=1
   IFS=","
   for checkstages in $existone
   do
@@ -19,10 +21,16 @@ do
        then
           echo "The stage name:--> $liststages not found .." 
        fi
-    #else
-    #   echo "Check Matching ...."
+    else
+       if [ "$loopcount" == "$initcount" ]
+       then
+         echo "The stage name:--> $liststages not found .."
+	 exit 1
+       fi
+       initcount=$((initcount+1))
     fi
  done
+
 done
 stageid=
 refid=1
