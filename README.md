@@ -18,4 +18,6 @@
 3. Run the script
 
         bash run.sh
+        
+4. Once it is ran in output it will prints the pipeline json and  save it to the spinnaker
 
