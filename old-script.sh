@@ -1,4 +1,5 @@
 #! /bin/bash
+
 echo "Fetch the stages from input file ..."
 
 stages=$(yq -r .stages stage-input.yml)
@@ -7,42 +8,14 @@ if [[ -z "$stages" ]]; then
   echo "ERROR: Please specify the stages in the input file....."
   exit 1
 else 
-  git clone https://github.com/maheshopsmx/pipeline-json.git > /dev/null
-  cd pipeline-json
-  rm -rf ../list
-  touch ../list
-  IFS=","
-  for liststages in $stages
-  do
-    existone=waitstage,manualjudgement,deploymanifest
-    loopcount=$(echo $existone | tr ',' ' ' | wc -w)
-    initcount=1
-    IFS=","
-    for checkstages in $existone
-    do
-      if [ "$liststages" == "$checkstages" ]
-      then
-        echo "Yes stage matches $liststages = $checkstages"
-        ls | grep $checkstages >> ../list
-        if [ "$?" != "0" ]
-        then
-          echo "The stage name:--> $liststages not found .." 
-        fi
-      else
-        if [ "$loopcount" == "$initcount" ]
-        then
-          echo "The stage name:--> $liststages not found .."
-	  exit 1
-        fi
-        initcount=$((initcount+1))
-      fi
-    done
-  done
+  echo "stages are : $stages"
   stageid=
   refid=1
+  filestg=wait_stage.json
   IFS=","
-  while read -r filestg; do
-    echo value is $filestg
+  for pipestage in $stages
+  do
+    echo value is $pipestage
     jq  --argjson stage "$(<$filestg)" '.stages += [$stage]' plain_pipeline_template.json > formulate.json
     if [[ -z "$stageid" ]]; then
     jq --argjson refstage '{"refId":"'$refid'","requisiteStageRefIds":['"$stageid"']}' '.stages['"$stageid"'] += $refstage' formulate.json > inter.json
@@ -59,9 +32,8 @@ else
     filestg=manualjudgement_stage.json
     refid=$((refid+1))
     stageid=$((stageid+1))
-  done < ../list
-  rm -rf ../list
-  mkdir final-pipeline
-  cp plain_pipeline_template.json final-pipeline/final_pipeline.json
-  cat final-pipeline/final_pipeline.json
+  done
+  cp plain_pipeline_template.json final_pipeline.json
+  cat final_pipeline.json
 fi
+

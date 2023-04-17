@@ -1,2 +1,2 @@
-stages: wait,manualjudgement
+stages: waitstage,manualjudgement
 
