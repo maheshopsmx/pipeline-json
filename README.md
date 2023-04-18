@@ -21,3 +21,5 @@
         
 4. Once it is ran in output it will prints the pipeline json and  save it to the spinnaker
 
+
+5. It can also be saved in  pipeline-json/complete_pipeline.json

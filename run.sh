@@ -63,5 +63,8 @@ else
   rm -rf ../list
   mkdir final-pipeline
   cp plain_pipeline_template.json final-pipeline/final_pipeline.json
+  echo "Complete Pipeline json"
+  echo "============================================================="
   cat final-pipeline/final_pipeline.json
+  echo "============================================================="
 fi
