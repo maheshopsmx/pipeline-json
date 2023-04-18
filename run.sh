@@ -29,6 +29,15 @@ else
         then
           echo "The stage name:--> $liststages not found .." 
         fi
+        filestg=$(ls | grep $checkstages)
+	dynaparm=$(yq -r '.stages.'"$liststages"'' ../../stage-input.yml -o json)
+	if [ "$dynaparm" != "null" ]
+	then
+	  echo It has params
+          jq --argjson param "$dynaparm" '. += $param' $filestg > duplicate.json
+	  rm -rf $filestg
+	  mv duplicate.json $filestg
+        fi
       else
         if [ "$loopcount" == "$initcount" ]
         then
