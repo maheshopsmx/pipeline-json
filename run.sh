@@ -1,7 +1,8 @@
 #! /bin/bash
 echo "Fetch the stages from input file ..."
 
-stages=$(yq -r .stages stage-input.yml)
+#stages=$(yq -r .stages stage-input.yml)
+stages=$(yq -r '.stages| to_entries | .[] | .key' stage-input.yml | xargs | sed -e 's/ /,/g')
 
 if [[ -z "$stages" ]]; then
   echo "ERROR: Please specify the stages in the input file....."

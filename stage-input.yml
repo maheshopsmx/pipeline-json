@@ -1,2 +1,8 @@
-stages: waitstage,manualjudgement
+#stages: waitstage,manualjudgement
+
+stages: 
+  waitstage:     #stage 1 and parameters
+    waitTime: 20
+  manualjudgement: # stage 2 and parameters
+    instructions: This is demo pipeline
 
