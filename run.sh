@@ -7,7 +7,7 @@ if [[ -z "$stages" ]]; then
   echo "ERROR: Please specify the stages in the input file....."
   exit 1
 else 
-  git clone https://github.com/maheshopsmx/pipeline-json.git > /dev/null
+  git clone https://github.com/maheshopsmx/pipeline-json.git 2> /tmp/tmp.log
   cd pipeline-json/stages
   rm -rf ../list
   touch ../list
@@ -61,10 +61,12 @@ else
     stageid=$((stageid+1))
   done < ../list
   rm -rf ../list
-  mkdir final-pipeline
-  cp plain_pipeline_template.json final-pipeline/final_pipeline.json
+  rm -rf ../../complete_pipeline.json
+  cp plain_pipeline_template.json ../../complete_pipeline.json
   echo "Complete Pipeline json"
   echo "============================================================="
-  cat final-pipeline/final_pipeline.json
+  cat ../../complete_pipeline.json
   echo "============================================================="
+  cd ../../
+  rm -rf pipeline-json
 fi

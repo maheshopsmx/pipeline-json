@@ -3,7 +3,7 @@
 
 ## Architecture (Draft)
 
-![Architecture](stages/Architecture.jpg)
+![Architecture](pics/Architecture.jpg)
 
 ## Steps to be followed 
 
