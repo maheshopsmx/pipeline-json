@@ -22,4 +22,6 @@
 4. Once it is ran in output it will prints the pipeline json and  save it to the spinnaker
 
 
-5. It can also be saved in  pipeline-json/complete_pipeline.json
+5. It can also be saved in  complete_pipeline.json
+
+6. Take the pipeline json and create spinnaker pipeline
