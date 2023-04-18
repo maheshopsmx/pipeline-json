@@ -13,7 +13,7 @@
     
         cd pipeline-json
 
-2. Specify the stages in the stage-input.yml
+2. Specify the stages in the stage-input.yml (for now it supports wait and manujudgement stages)
 
 3. Run the script
 
