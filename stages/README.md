@@ -12,16 +12,16 @@ In this folder stage json are saved as a templetes
 
 1. Go to the spinnaker pipeline 
 
-  ![pipeline](pics/pipeline.png)
+  ![pipeline](../pics/pipeline.png)
 
 2. Click on the stage
 
-  ![stageclick](pics/stageclick.png)
+  ![stageclick](../pics/stageclick.png)
 
 3. Click on edit as json 
 
-  ![editjson](pics/editjson.png)
+  ![editjson](../pics/editjson.png)
 
 4. This json is saved as a stage json as a templete 
 
-  ![editjson](pics/stagejson.png)
+  ![editjson](../pics/stagejson.png)
