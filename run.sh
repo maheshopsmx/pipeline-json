@@ -8,7 +8,7 @@ if [[ -z "$stages" ]]; then
   exit 1
 else 
   git clone https://github.com/maheshopsmx/pipeline-json.git > /dev/null
-  cd pipeline-json
+  cd pipeline-json/stages
   rm -rf ../list
   touch ../list
   IFS=","
