@@ -17,8 +17,6 @@ Each Spinnaker Pipeline it has it's own json and each stage will have it's own j
 
   ![pipeline](../pics/pipeline.png)
   
-  <img src="../pics/pipeline.png" alt="Alt text" title="pipelin" style="display: inline-block; margin: 0 auto; max-width: 50px">
-
 2. **Click on the stage**
 
   ![stageclick](../pics/stageclick.png)
