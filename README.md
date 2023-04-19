@@ -34,35 +34,37 @@
 
 6. Take the pipeline json and create spinnaker pipeline
 
- -  Click on create pipeline
+ -  **Click on create pipeline**
+ 
 
 ![Createpipeline](pics/createpieline.png)
 
+
 ![savepipe](pics/savepipe.png)
 
-  - Click on pipeline action
+  - **Click on pipeline action**
 
 
 ![pipeaction](pics/pipeaction.png)
 
-  - Click on edit as json
+  - **Click on edit as json**
 
 
 ![editjson](pics/editjson.png)
 
-  - Remove old json and copy paste the new json 
+  - **Remove old json and copy paste the new json**
 
 ![savepipejs](pics/savepipejs.png)
 
-  - finally save the pipeline 
+  - **finally save the pipeline**
 
 ![savepipen.png](pics/savepipen.png)
  
-  - Now run the pipeline
+  - **Now run the pipeline**
 
 ![savepipejs](pics/savepipejs.png)
 
-  - Execution
+  - **Pieline Execution will be as below**
 
 
 ![runpip](pics/runpip.png)
