@@ -15,11 +15,11 @@
 
 2. Specify the stages in the stage-input.yml (for now it supports wait and manujudgement stages)
 
-     stages: 
-       waitstage:        #stage 1 and parameters
-          waitTime: 20    # ignore if not change
-       manualjudgement:                       # stage 2 and parameters
-          instructions: This is demo pipeline  # ignore if no change 
+       stages: 
+         waitstage:        #stage 1 and parameters
+            waitTime: 20    # ignore if not change
+         manualjudgement:                       # stage 2 and parameters
+            instructions: This is demo pipeline  # ignore if no change 
 
 
 3. Run the script
