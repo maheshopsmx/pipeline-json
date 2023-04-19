@@ -16,6 +16,8 @@ Each Spinnaker Pipeline it has it's own json and each stage will have it's own j
 1. **Go to the spinnaker pipeline**
 
   ![pipeline](../pics/pipeline.png)
+  
+  <img src="../pics/pipeline.png" alt="Alt text" title="pipelin" style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 2. **Click on the stage**
 
